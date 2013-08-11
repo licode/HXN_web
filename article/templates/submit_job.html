@@ -1,0 +1,56 @@
+{% extends "articles.html" %}
+
+
+{% block content %}
+
+    <h2 align="center">You just created a job: {{ article.title }}</h2>
+    <h3 align="center">Dates: {{ article.pub_date }}</h3>
+
+        <div style="font-size:22px;text-align:center">
+        <table border="1" width=600 height=300 align="center">
+            <tr>
+                <th>parameter</th>
+                <th>value</th>
+            </tr>
+            <tr>
+                <td>title</td> 
+                <td>{{article.title}}</td>
+            </tr>
+            <tr>
+                <td>algorithm</td> 
+                <td>{{article.algorithm}}</td>
+            </tr>
+            <tr>
+                <td>angle start</td> 
+                <td>{{article.angle_start}}</td>
+            </tr>
+            <tr>
+                <td>angle end</td> 
+                <td>{{article.angle_end}}</td>
+            </tr>
+            <tr>
+                <td>angle step</td> 
+                <td>{{article.angle_step}}</td>
+            </tr>
+            <tr>
+                <td>notes</td> 
+                <td>{{article.notes}}</td>
+            </tr>
+            <!--</tr>
+            <td>upload file</td> <td>{{article.upload_file}}<td>
+                </tr>-->
+        </table>
+        </div>    
+        
+    <!--<p style="font-size:22px">Edit this job. <a href="/articles/edit_job/{{article.id}}"><img src="/static/images/icon_add.gif" width="20" ></a></p>
+    <p style="font-size:22px">Delete this job. <a href="/articles/delete/{{article.id}}"><img src="/static/images/icon_delete.gif" width="20" ></a></p>-->
+    <p style="font-size:22px"> <a href="/articles/edit_job/{{article.id}}">Edit this job.</a></p>
+    <p style="font-size:22px"> <a href="/articles/delete/{{article.id}}">Delete this job.</a></p>
+
+    <hr>
+    <h1 align="center"><a href="/articles/run/{{article.id}}">Submit this job</a></h1>
+
+{% endblock %}
+
+
+

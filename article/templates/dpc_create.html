@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    <ul>
+        <h3><a href="/articles/dpc_imagings">Cancel</a></h3>
+    </ul>    
+{% endblock %}
+
+{% block content %}
+
+<h2 align="center">Differential Phase Contrast Imaging</h2>
+<form action="/articles/dpc_create/" method="post" enctype="multipart/form-data">{% csrf_token %}
+<ul>
+    <h2>{{form.as_ul}}</h2>
+</ul>
+    <input type="submit" name="submit" value="Creat a job">
+</form>
+
+{% endblock %}

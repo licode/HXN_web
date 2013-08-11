@@ -1,0 +1,18 @@
+{% extends "articles.html" %}
+{% load static %}
+
+
+{% block content %}
+<h3>
+<p>Job {{article.title}} is submitted.</p>
+<p> Status: Job is done.</p>
+<!--<p> Figure is saved as {{article.save_to}}</p>-->
+<p> <a href="/static/images/{{fullname}}_{{article.title}}.jpeg">Download Images</a>
+<p> Please see the result: </p>
+</h3>
+
+<img src="/static/images/{{fullname}}_{{article.title}}.jpeg" width="350" height="350" align="center">
+<!--<img src="{% static "assets/images/{{article.save_to}}" %}" width="350" height="350" align="left">-->
+
+{% endblock %}
+

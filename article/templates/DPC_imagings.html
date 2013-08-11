@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+    <h3><a href="/articles/all_beamlines">Home</a></h3>
+    <h3><a href="/articles/all_functions">HXN</a></h3>
+    <h3><a href="/articles/dpc_create">Create a new Job</a></h3>
+</ul>
+{% endblock %}
+
+
+{% block content %}
+
+
+{% for val in input %}
+<div>
+    <h2><a href="/articles/dpc_get/{{ val.id }}/">{{ val.title }}</a></h2>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

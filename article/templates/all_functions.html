@@ -1,0 +1,95 @@
+{% extends "all_beamlines.html" %}
+{% load static %}
+
+{% block leftbar %}
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+<script> 
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+</script>-->
+
+<!--<style type="text/css"> 
+    #panel,#flip
+    {
+        padding:5px;
+        text-align:center;
+        background-color:#ccffcc; /*#e5eecc;*/
+        border:solid 3px #c3c3c3;
+        border-radius: 15px;
+    }
+    #panel
+    {
+        padding:20px;
+        /*display:none;*/   /*turn off click function*/
+    }
+</style>-->
+
+
+<!--<div id="left_panel1">
+    <h2>Tools for HXN</h2>
+</div>-->
+<div id="left_panel2">
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/all_functions">About HXN</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/status">Beamline Status</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/status">Beamline Equipments</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/publications">Publications</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/accounts/login">Data Analysis Tools</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/contacts">Contact Information</a></h3>
+        </div>
+        <div style="border:solid 5px #A4A5AA;border-radius:15px">
+            <h3><a href="/all_functions">HXN Wiki</a></h3>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block rightbar %}
+    <div id="right_panel1"><h3>Latest News</h3></div> 
+    <div id="right_panel2"></div>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div>
+    
+    <p align="left"><h3>The Hard X-ray Nanoprobe beamline and endstation instruments (HXN) will be designed and constructed to explore new frontiers of hard x-ray microscopy applications with the highest achievable spatial resolution. Currently the available spatial resolution for scientific applications, provided by scanning x-ray microscopes in the hard x-ray regime, is limited to ~50nm, which is still insufficient for probing the nanoscale interfacial structures critical in determining properties and functionalities of material and biological systems. The HXN beamline aims to enable x-ray experiments at spatial resolutions ranging from 10 to 30 nm with an ultimate goal of ~1 nm. </h3></p>
+
+    <!--<img src="{% static "images/HXN_microscope.jpeg" %}" width="500" height="300" align="left">-->
+    <!--<img src="/static/images/HXN_microscope.jpeg" width="500" height="300" align="left">-->
+
+    <h2>Scientific Scope</h2>
+    <p align="left"><h3>Functionalities of many material systems are dictated by structural, physical and chemical properties of their constituents at the nanometer scale. Understanding the underlying principles and control mechanisms at such a small length scale, while vital for studies in many areas of science and technology, remains a challenging task due to the lack of noninvasive characterization tools with sufficient sensitivity and spatial resolution. Hard X-rays,
+        because of their weak interaction with matter, have a significant penetration depth and allow studies of buried interfaces, internal sample structure and chemical composition. In combination with their insensitivity to electric and magnetic fields and high sensitivity to structural, elemental and chemical state changes, hard X-rays are ideal tools for in-situ characterization of material properties in ambient environments or gases. The hard X-ray nanoprobe (HXN) beamline extends
+        these unique capabilities into the nano world, providing an analytical tool with high spatial resolution. The scientific mission of the HXN beamline is to enable hard X-ray imaging of structure, elements, strain and chemical states with unprecedented spatial resolutions, ultimately down to 1 nm. The temperature control capability at the sample location (~100 K to ~600 K) also enables  phase transition studies in various materials systems. </h3></p>
+
+    <img src="/static/images/beamline_layout.jpg" width="500" height="300" align="left">
+    
+    <h2>Beamline Description</h2>
+    <p><h3>The beamline is designed to take full advantage of the  bright, coherent X-ray beam delivered from the undulator source of NSLS-II. The experimental endstation is housed in a separated satellite building, about 110 m away from the source. This design ensures a sufficient demagnification ratio for nanofocusing and vibration isolation from the main ring building. The beamline adopts the concept of secondary source realized by secondary source apertures, mitigating the potential
+        source stability issue caused by beamline optics and enabling the manipulation of the coherence length at the endstation.</h3></p>
+
+    <p><h3>The nanoprobe endstation is a scanning microscope consisting of a multilayer Laue lens module for high resolution (10 nm) and a Fresnel zone plate module for moderate resolution (30 nm) to accommodate a great variety of experiments in the energy range of 6-25 keV. Different types of detectors, including multi-element silicon-drift detectors and 2D pixel-array detectors, are placed around the sample, collecting concurrently the maximum amount of scattering signals.
+        Absorption-, phase-, fluorescence- and diffraction- (in Bragg condition for crystalline samples) contrast images will be acquired simultaneously during the raster scans. The microscope can work in high vacuum up to 10^-6 torr, in protective He gas or in air.</h3></p>
+
+    <img src="/static/images/HXN_microscope.jpeg" width="600" height="300" align="left">
+    <img src="/static/images/3D_endstation.jpg" width="600" height="300" align="left">
+</div>
+
+{% endblock %}

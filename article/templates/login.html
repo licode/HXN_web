@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+<head>
+    <title>{% block title %}NSLSII Data Analysis Engine{% endblock %}</title>
+</head>
+
+
+{% block secondbar %}
+{% endblock %}
+
+
+{% block content %}
+
+    {% if form.errors %}
+        <p class="error">Sorry, that's not a valid username or password</p>
+    {% endif %}
+
+    <!--<p class="title1"> <i>PyLight</i>  </p>
+    <p class="title2"> NSLS II Data Analysis Engine </p>-->
+    <!--<h2> Advanced Tools for The Most Brillant Light Source </h2>-->
+
+
+    <form action="/accounts/auth/" method="post" style="text-align:center">{% csrf_token %}
+        <p style="font-size:20px"><label for="username">User name:</label>
+        <input type="text" name="username" value="" id="username"></p>
+        <p style="font-size:20px"><label for="password">Password:</label>
+        <input type="password" name="password" value="" id="password"> </p>
+
+        <input type="submit" value="login"> 
+
+    </form>
+
+
+    <p style="font-size:20px;text-align:center"> <a href="/accounts/register/">New user</a></p>
+    <!--<p class="general"><a href="/articles/all_beamlines/" style="color:white;font-size:15px">Anonymity</a></p>-->
+
+{% endblock %}
+
+
+

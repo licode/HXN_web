@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block secondbar %}
+{% endblock %}
+        
+        
+{% block leftbar %}
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+<script> 
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideDown("slow");        
+        });
+    });
+</script>
+             
+<style type="text/css"> 
+    #panel,#flip
+    {
+        padding:5px;
+        text-align:center;
+        background-color:#ccffcc; /*#e5eecc;*/
+        border:solid 3px #c3c3c3;
+        border-radius: 15px;
+    }
+    #panel
+    {
+        padding:50px;
+        /*display:none;*/
+    }
+</style>-->
+<div id="left_panel1"> <h2>All Beamlines</h2> </div>
+<div id="left_panel2" align="left">
+    <h3>Project Beamlines</h3>
+    <h2><a href="/articles/all_functions">HXN</a></h2>
+    <h2>SRX</h2>
+    <h2>CSX-1</h2>
+    <h2>CSX-2</h2>
+    <h2>CHX</h2>
+    <h2>XPD</h2>
+    <h2>IXS</h2>
+    <h3>More Beamlines</h3>
+    <h2><a href="/articles/all">FXI</a></h2>
+    <h2>...</h2>
+</div>
+
+{% endblock %}
+
+
+{% block rightbar %}
+<!--<h2 align="center">History</h2>-->
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h2> About the National Synchrotron Light Source II </h2>
+    <p><h3>Though the current NSLS has been continually updated since its commissioning in 1982, today the practical limits of machine performance have been reached. Meeting the critical scientific challenges of our energy future will require advanced new capabilities that NSLS-II will uniquely provide.
+
+    NSLS-II will be a new state-of-the-art, medium-energy electron storage ring (3 billion electron-volts) designed to deliver world-leading intensity and brightness, and will produce x-rays more than 10,000 times brighter than the current NSLS. The superlative character and combination of capabilities will have broad impact on a wide range of disciplines and scientific initiatives, including the National Institutes of Health’s structural genomics initiative, DOE’s Genomics:GTL
+    initiative, and the federal nanoscience initiative.
+
+    The facility will be a key resource for researchers at Brookhaven’s Center for Functional Nanomaterials, allowing for analysis of new materials that are expected to transform the nation’s energy future. Construction of the NSLS-II’s ring building began in March 2009. If plans are carried through as proposed, the new facility will begin operating in 2015.
+
+    In 2009, NSLS-II received (50 million in accelerated funding under the American Recovery and Reinvestment Act. During its construction, the project is expected to create more than 1,000 construction and 300 scientific and engineering jobs. When operating, NSLS-ll will support more than 500 permanent positions.)</h3></p>
+<img src="{% static "images/basic/NSLSII.jpeg" %}" width="500" height="150">
+</div>
+
+{% endblock %}

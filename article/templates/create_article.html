@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block leftbar %}
+    <ul>
+        <h3><a href="/articles/all">Cancel</a></h3>
+    </ul>    
+{% endblock %}
+
+{% block content %}
+
+<h2 align="center">Tomography</h2>
+<form action="/articles/create/" method="post" enctype="multipart/form-data">{% csrf_token %}
+<ul>
+    <h2>{{form.as_ul}}</h2>
+    <input size="30" type="submit" name="submit" value="Create a job">
+</ul>
+</form>
+
+{% endblock %}
+
+
+{% block rightbar %}
+<h2 align="center">History</h2>
+{% for article in articles %}
+<div style="width:250px;height:40px;background-color:#e5eecc;" align="left">
+    <h4><p>{{ article.title }} , {{article.algorithm}} , {{article.angle_start}} , {{article.angle_end}} , {{article.angle_step}} </p></h2>
+</div>
+{% endfor %}
+{% endblock %}
+
+

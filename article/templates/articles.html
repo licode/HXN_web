@@ -1,0 +1,99 @@
+{% extends "all_functions.html" %}
+
+
+{% block rightbar %}
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+});
+});
+</script>
+
+<style type="text/css"> 
+    #panel,#flip
+    {
+        padding:5px;
+        text-align:center;
+        background-color:#ccffcc; /*#e5eecc;*/
+        border:solid 0px #000000; /*#c3c3c3;*/
+        border-radius: 15px;
+    }
+    #panel
+    {
+        padding:1px;
+        display:none;
+    }
+</style>-->
+
+<h2 id="right_panel1" align="center" style="color:green">History of tomography</h2>
+<div id="right_panel2">
+<ol>
+{% for item in articles %}
+    <div style="width:90%;height:80px;background-color:#c2d1ff;text-align:center; border:solid 0px #000000; border-radius:20px" align="left">
+    <li style="color:green"> {{ item.title }} 
+    <a href="/articles/get/{{ item.id }}/" style="font-size:30px;text-align:left"><img src="/static/images/eye_icon.png" width="16" ></a>
+    <a href="/articles/delete/{{ item.id }}"><img src="/static/images/icon_delete.gif" width="16" ></a>
+    <p style="font-size:12px">{{ item.pub_date }}</p>
+    </li>
+    </div>
+    <hr width="90%" align="left">
+{% endfor %}
+</ol>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+    <h2 align="center">Tomography</h2>
+    <form action="/articles/create/" method="post" enctype="multipart/form-data" style="text-align:left">{% csrf_token %}
+    
+        <!--<h2>{{form.as_ul}}</h2>-->       
+        <div style="font-size:22px; text-align:center">
+        <table border="0.1" width=600 height=300 align="center">
+            <tr>
+                <th>parameter</th>
+                <th>value</th>
+            </tr>
+            <tr>
+                <td>title</td> 
+                <td>{{form.title}}</td>
+            </tr>
+            <tr>
+                <td>algorithm</td> 
+                <td>{{form.algorithm}}</td>
+            </tr>
+            <tr>
+                <td>angle start</td> 
+                <td>{{form.angle_start}}</td>
+            </tr>
+            <tr>
+                <td>angle end</td> 
+                <td>{{form.angle_end}}</td>
+            </tr>
+            <tr>
+                <td>angle step</td> 
+                <td>{{form.angle_step}}</td>
+            </tr>
+            <tr>
+                <td>notes</td> 
+                <td>{{form.notes}}</td>
+            </tr>
+            <tr>
+                <td>upload file</td> 
+                <td>{{form.upload_file}}</td>
+            </tr>
+        </table>
+    
+        <input  size="4" type="submit" name="submit" value="Create a job">
+    </div> 
+    </form>
+
+{% endblock %}
+
+
